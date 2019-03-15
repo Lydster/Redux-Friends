@@ -3,12 +3,12 @@ import {connect } from 'react-redux';
 import Loader from 'react-loader-spinner';
 
 import {login} from '../actions';
-import { EEXIST } from 'constants';
+
 
 class Login extends React.Component {
     state = {
         credentials: {
-            usernamee: '',
+            username: '',
             password: ''
         }
     }
@@ -48,7 +48,12 @@ class Login extends React.Component {
                         placeholder="password"
                     />
                 </form>
-                <button>Log in</button>
+                <button>
+                {this.props.isLoggingIn ? (
+              <Loader type="ThreeDots" color="#1f2a38" height="12" width="26" />
+            ) : (
+              'Log in'
+            )}</button>
             </div>
         )
     }

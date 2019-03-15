@@ -2,7 +2,11 @@
 
 
 const initialState = {
-    friends: []
+    friends: [],
+    errorStatusCode: null,
+    fetchingData: false,
+    isLoggedIn: false,
+    error: ''
 };
 
 const reducer = (statee = initialState, action) => {
